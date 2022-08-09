@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+
+{% block title %}SHOP{% endblock title %}
+
+{% block content %}
+
+<h1>{{now}}</h1>
+<h1>제품리스트</h1>
+<ul>
+{% for product in products %}
+    <li><a href="{% url "products:detail" product.pk %}">{{product.name_en}}</a></li>
+{% endfor %}
+</ul>
+<h5>
+{% if page_obj.has_previous %}
+    <a href="?page={{page_obj.previous_page_number}}">Previous</a>
+{% endif %}
+
+Page {{page_obj.number}} of {{page_obj.paginator.num_pages}}
+
+{% if page_obj.has_next %}
+<a href="?page={{page_obj.next_page_number}}">Next</a>
+{% endif %}
+</h5>
+
+
+{% endblock content %}

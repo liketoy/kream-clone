@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+
+{% block title %}STYLE{% endblock title %}
+
+{% block content %}
+
+<h1>스타일</h1>
+{% for post in posts %}
+<p>작성자: {{post.user.username}}</p>
+{% for photo in post.photos.all %}
+    <img src="{{photo.file.url}}" alt="{{post.user.username}}" />
+{% endfor %}
+<p>{{post.caption}}</p>
+<hr />
+<h2>상품태그 {{post.products.count}}개</h2>
+{% for product in post.products.all %}
+    <img src="{{product.photos.first.image.url}}" alt="{{product.name_en}}" />
+    <p>{{product.name_en}}</p>
+    <p>{{product.released_price}}원</p>
+
+{% endfor %}
+
+{% endfor %}
+
+
+{% endblock content %}
