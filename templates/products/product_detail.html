@@ -4,6 +4,6 @@
 
 {% block content %}
 
-<h1>{{product.name_en}}</h1>
+<h1 class="font-bold text-lg">{{product.name_en}}</h1>
 <img src="{{ product.photos.first.image.url }}" alt="{{product.name_en}}" />
 {% endblock content %}
