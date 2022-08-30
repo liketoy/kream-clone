@@ -1,0 +1,19 @@
+<div class="flex flex-col">
+    <div class="w-80">
+        <img class="w-full" src="{{post.photos.first.file.url}}" alt="{{post.user.username}}" />
+    </div>
+    <p>{{post.user.username}}</p>
+    <p>{{post.caption}}</p>
+    {% for product in post.products.all %}
+    <div class="flex gap-2">
+        <div>
+            <img src="{{product.photos.first.image.url}}" alt="{{product.name_en}}" />
+        </div>
+        <div class="flex flex-col justify-center">
+            <p>{{product.name_en}}</p>
+            <p>{{product.released_price}}원</p>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>

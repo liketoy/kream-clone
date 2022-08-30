@@ -1,10 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="post" action="{% url 'users:login' %}">
+<form method="post" action="{% url 'users:login' %}" >
     {% csrf_token %}
-    <input type="text" placeholder="username" name="username" />
-    <input type="password" name="password" id="password">
-    <button>로그인</button>
+    {% comment %} <input type="email" name="email" placeholder="예) kream@kream.co.kr" />
+    <input type="password" name="password" /> {% endcomment %}
+    {% comment %} {{form.as_p}} {% endcomment %}
+    {% for field in form %}
+    <p>
+        {{field.label}}:{{field}}
+        {% if field.errors %}
+            {% for error in field.errors %}
+                <span class="text-red-700 font-medium text-sm">{{error}}</span> 
+            {% endfor %}
+        {% endif %}
+    </p>
+    {% endfor %}
+    <input type="submit" value="로그인" />
 </form>
+
+<div class="py-2 w-24 bg-yellow-400">
+    <a href="{% url 'users:kakao-login' %}">카카오 로그인</a>
+</div>
 {% endblock content %}

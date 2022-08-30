@@ -5,12 +5,12 @@
 {% block content %}
 
 <h1>{{now}}</h1>
-<h1>제품리스트</h1>
-<ul>
+<h1 class="text-lg">제품리스트</h1>
+<div class="grid grid-cols-4 gap-4">
 {% for product in products %}
-    <li><a href="{% url "products:detail" product.pk %}">{{product.name_en}}</a></li>
+    {% include "mixins/product_card.html" with product=product page=page %}
 {% endfor %}
-</ul>
+</div>
 <h5>
 {% if page_obj.has_previous %}
     <a href="?page={{page_obj.previous_page_number}}">Previous</a>

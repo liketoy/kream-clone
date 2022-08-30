@@ -1,0 +1,8 @@
+<div class="flex flex-col gap-2">
+    <div class="w-full">
+        <img class="w-full" src="{{product.photos.first.image.url}}" alt="{{product.name_en}}">
+    </div>
+    <p class="font-bold text-red-600 text-2xl">{{forloop.revcounter|add:page}}{{product.brand.name}}</p>
+    <p>{{product.name_en}}</p>
+    <p class="text-gray-500 text-sm">{{product.name_kr}}</p>
+</div>

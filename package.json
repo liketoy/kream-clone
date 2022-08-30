@@ -1,0 +1,27 @@
+{
+  "name": "kream-clone",
+  "version": "1.0.0",
+  "description": "Cloning Kream with Python, Django and more...💖🐍🦊",
+  "scripts": {
+    "css": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liketoy/kream-clone.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liketoy/kream-clone/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "gulp": "^4.0.2",
+    "gulp-csso": "^4.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "node-sass": "^7.0.1",
+    "sass": "^1.54.3",
+    "tailwindcss": "^3.1.8"
+  }
+}
