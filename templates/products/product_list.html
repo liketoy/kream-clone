@@ -8,7 +8,7 @@
 <h1 class="text-lg">제품리스트</h1>
 <div class="grid grid-cols-4 gap-4">
 {% for product in products %}
-    {% include "mixins/product_card.html" with product=product %}
+    {% include "mixins/product_card.html" with product=product page=page %}
 {% endfor %}
 </div>
 <h5>

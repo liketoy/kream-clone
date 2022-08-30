@@ -18,4 +18,8 @@
     {% endfor %}
     <input type="submit" value="로그인" />
 </form>
+
+<div class="py-2 w-24 bg-yellow-400">
+    <a href="{% url 'users:kakao-login' %}">카카오 로그인</a>
+</div>
 {% endblock content %}
